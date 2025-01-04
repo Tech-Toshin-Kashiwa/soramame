@@ -27,53 +27,37 @@ const canvasUpdate = () => {
    requestAnimationFrame(canvasUpdate);
 }
 
-// CSVファイルを読み込む関数
-async function loadCSV(filePath) {
-   try {
-       // fetchを使ってCSVを取得
-       const response = await fetch(filePath);
-       if (!response.ok) {
-           throw new Error(`HTTP error! status: ${response.status}`);
-       }
+function csv2Array(filePath) { //csvﾌｧｲﾙﾉ相対ﾊﾟｽor絶対ﾊﾟｽ
+	var csvData = new Array();
+	var data = new XMLHttpRequest();	
+	data.open("GET", filePath, false); //true:非同期,false:同期
+	data.send(null);
 
-       // CSVデータをテキスト形式で取得
-       const csvText = await response.text();
+	var LF = String.fromCharCode(10); //改行ｺｰﾄﾞ
+	var lines = data.responseText.split(LF);
 
-       // テキストを配列に変換
-       const data = parseCSV(csvText);
+   // 1行目をラベル（キー）として取得
+   var headers = lines[0].split(",");
 
-       // 配列データを確認
-       console.log(data);
-   } catch (error) {
-       console.error('Error loading CSV:', error);
-   }
+   // 2行目からの処理
+	for (var i = 1; i < lines.length;++i) {
+		var cells = lines[i].split(",");
+		if( cells.length != 1 ) {
+			csvData.push(cells);
+		}
+	}
+	return csvData;
 }
 
-// CSVテキストを配列に変換する関数
-function parseCSV(csvText) {
-   const rows = csvText.split('\n').map(row => row.trim());
-   const headers = rows[0].split(',');
-
-   return rows.slice(1).map(row => {
-       const values = row.split(',');
-       return headers.reduce((obj, header, index) => {
-           obj[header] = values[index];
-           return obj;
-       }, {});
-   });
-}
 
 // CSVファイルを相対パスで読み込む
 let data = [];
-loadCSV('./data/sample.csv').then(loadedData => {
-    data = loadedData;
-    document.getElementById('data-msg').textContent = `座席データ：読み込み済み`;
-    checkImage(); // データ読み込み後にQRコードの処理を開始
-}).catch(error => {
-    console.error('Error loading CSV:', error);
-    document.getElementById('data-msg').textContent = `座席データ：読み込みエラー`;
-});
+data = csv2array('./data/sample.csv')
 
+// CSVファイルの読み込み状況に応じてテキストを書き換える
+if(data) {
+   document.getElementById("data-msg").innerText = `座席データを読み込みました。`;
+}
 
 // qrDataに合致する生徒情報を検索
 const searchStudent = (data, qrData) => {
