@@ -19,4 +19,4 @@
 
 ### テスト環境
 - Windows 11
--   - Google Chrome バージョン: 131.0.6778.265
+  - Google Chrome バージョン: 131.0.6778.265
