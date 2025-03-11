@@ -9,8 +9,8 @@
 - 毎度差し替えるデータは難しくてもcsvまでにする（校舎でPC初心者が継続的に使用できるようにする）
 
 ### Members
-- Tsubasa KAWAGISHI（東進ハイスクール柏校49期スタッフ）
-- Shion ITSUKA（東進ハイスクール柏校49期スタッフ）
+- Tsubasa KAWAGISHI（東進ハイスクール柏校49-50期スタッフ）
+- Shion ITSUKA（東進ハイスクール柏校49-51期スタッフ）
 
 ### 使用言語
 - html
