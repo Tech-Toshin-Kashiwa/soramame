@@ -10,13 +10,15 @@
 
 ### Members
 - Tsubasa KAWAGISHI（東進ハイスクール柏校49-50期スタッフ）
-- Shion ITSUKA（東進ハイスクール柏校49-51期スタッフ）
 
 ### 使用言語
 - html
 - css
 - javascript
 
-### テスト環境
-- Windows 11
-  - Google Chrome バージョン: 131.0.6778.265
+
+
+## 使い方
+- GitHubのレポジトリ(Soramame)から「<CODE>」を選択し、Download ZIPする。
+- ZIPファイルを解凍し、ディレクトリ「data」の中にある「sample.csv」をその模試で使用する生徒データへと入れ替える。
+- Soramame.batを実行する。
