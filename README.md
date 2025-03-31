@@ -19,6 +19,6 @@
 
 
 ## 使い方
-- GitHubのレポジトリ(Soramame)から「<CODE>」を選択し、Download ZIPする。
+- GitHubのレポジトリ(Soramame)から「<"CODE">」を選択し、Download ZIPする。
 - ZIPファイルを解凍し、ディレクトリ「data」の中にある「sample.csv」をその模試で使用する生徒データへと入れ替える。
 - Soramame.batを実行する。
