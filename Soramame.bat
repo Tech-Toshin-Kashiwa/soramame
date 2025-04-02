@@ -25,6 +25,6 @@ start "" python -m http.server 8000
 timeout /t 2 >nul
 
 :: ブラウザでtop.htmlを開く
-start "" http://localhost:8000/top.html
+start "" http://localhost:8000/html/top.html
 
 exit
