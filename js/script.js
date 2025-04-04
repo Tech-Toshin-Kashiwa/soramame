@@ -20,7 +20,7 @@ const media = navigator.mediaDevices.getUserMedia({ audio: false, video: {width:
 // カメラ映像のキャンバス表示
 const cvs = document.getElementById('camera-canvas');
 const ctx = cvs.getContext('2d');
-const canvasUpdate = () => {
+const canvasUpdate = () => {あ
    cvs.width = contentWidth;
    cvs.height = contentHeight;
    ctx.drawImage(video, 0, 0, contentWidth, contentHeight);
@@ -52,7 +52,7 @@ function csv2Array(filePath) { //csvﾌｧｲﾙﾉ相対ﾊﾟｽor絶対ﾊﾟ
 
 // CSVファイルを相対パスで読み込む
 let data = [];
-data = csv2array('./data/sample.csv')
+data = csv2array('../data/sample.csv')
 
 // CSVファイルの読み込み状況に応じてテキストを書き換える
 if(data) {
